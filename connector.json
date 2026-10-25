@@ -1,0 +1,16 @@
+{
+  "type": "telegram",
+  "label": "Telegram",
+  "description": "Chat with sijba through your own Telegram bot. Only chats you pair with a code can use it.",
+  "direction": "inbound+outbound",
+  "image": "ghcr.io/sijba-it/sijba-telegram",
+  "port": 9102,
+  "fields": [
+    {"name": "TELEGRAM_BOT_TOKEN", "label": "Bot token", "secret": true, "required": true,
+     "help": "Create a bot with @BotFather in Telegram and paste the token it gives you."},
+    {"name": "TELEGRAM_PAIRING_CODE", "label": "Pairing code", "secret": true, "required": true,
+     "help": "Choose a code. Then send /pair <code> to your bot from each chat that may use sijba."},
+    {"name": "TELEGRAM_TARGET", "label": "Send messages to",
+     "help": "Optional handler or channel id. Empty: the normal pipeline decides."}
+  ]
+}
